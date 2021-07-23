@@ -1,4 +1,5 @@
 # vue-ledger-assignment
+Web Technology and Web Services course 01418442
 
 ## Project setup
 ```
