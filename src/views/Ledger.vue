@@ -1,8 +1,10 @@
 <template>
   <div>
-    <h1>Ledger Assignment</h1>
-    <ledger-form></ledger-form>
-    <ledger-table></ledger-table>
+    <h1 class="text-center text-white text-xl text-6xl px-7 py-7 tracking-widest font-bold" style="background-color: #284E78">ระบบบันทึกรายรับ-รายจ่าย</h1>
+    <div>
+      <ledger-form></ledger-form>
+      <ledger-table></ledger-table>
+    </div>
   </div>
 </template>
 
@@ -13,9 +15,8 @@ import LedgerTable from '@/components/LedgerTable'
 export default {
   components: { 
     LedgerForm,
-    LedgerTable
+    LedgerTable,
   }
-
 }
 </script>
 
