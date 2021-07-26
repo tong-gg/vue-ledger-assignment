@@ -5,7 +5,7 @@
                 <input type="date" id="dateTable" v-model="today" class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                 <button @click="searchByDate" class="w-auto px-6 py-3   mb-4 text-base  font-semibold leading-6 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200 rounded-full block  border-b border-purple-300 bg-blue-300 hover:bg-blue-500 text-blue-900">
                     ค้นหา
-                     <font-awesome-icon icon="search"/>
+                    <font-awesome-icon icon="search"/>
                 </button>  
                 <div v-if="data !== undefined" class="flex space-x-8 justify-center text-2xl" style="margin-left: auto">
                 <div class="text-white rounded-2xl px-4 py-4" style="background-color: #5C969E">
@@ -21,6 +21,22 @@
                 <div class="text-white rounded-2xl px-4 py-4" style="background-color: #CFC5A5">
                 <p>ยอดคงเหลือ </p>
                 <p>{{ data.balance }} บาท</p>
+                </div>
+        </div>
+        <div v-if="data === undefined" class="flex space-x-8 justify-center my-16 text-2xl" style="margin-left: auto">
+                <div class="text-white rounded-2xl px-4 py-4" style="background-color: #5C969E">
+                <p>ยอดรวมรายรับรายวัน</p>
+                <p>0 บาท</p>
+                </div>
+                
+                <div class="text-white rounded-2xl px-4 py-4" style="background-color: #F38BA0">
+                <p>ยอดรวมรายจ่ายรายวัน</p>
+                <p>0 บาท</p>
+                </div>
+
+                <div class="text-white rounded-2xl px-4 py-4" style="background-color: #CFC5A5">
+                <p>ยอดคงเหลือ </p>
+                <p>0 บาท</p>
                 </div>
         </div>
         </div>
@@ -70,36 +86,24 @@
                 </div>
             </div>
         </div>
-        <div v-if="data === undefined || data.balance === 0" class="mt-28">
+        <div v-if="data === undefined || data.balance === 0" class="my-12">
             <h3 class="text-3xl">ว้าาา วันนี้ยังไม่ได้ใช้จ่ายอะไรเลย</h3>
         </div>
         <div class="flex space-x-8 justify-center text-2xl my-16" style="margin-left: auto">
-                <div class="text-white tracking-wider rounded-2xl px-4 py-4" style="background-color: #628395">
+            <div class="text-white tracking-wider rounded-2xl px-4 py-4" style="background-color: #628395">
                 <p>ยอดรวมรายรับ</p>
                 <p>{{ sum.income }} บาท</p>
                 </div>
 
-                <div class="text-white tracking-wider rounded-2xl px-4 py-4" style="background-color: #FFA0A0">
+            <div class="text-white tracking-wider rounded-2xl px-4 py-4" style="background-color: #FFA0A0">
                 <p>ยอดรวมรายจ่าย</p>
                 <p>{{ sum.expense }} บาท</p>
             </div>
-       
-         <div v-if="data === undefined" class="flex space-x-8 justify-center my-16 text-2xl" style="margin-left: auto">
-                <div class="text-white rounded-2xl px-4 py-4" style="background-color: #5C969E">
-                <p>ยอดรวมรายรับรายวัน</p>
-                <p>0 บาท</p>
-                </div>
-                
-                <div class="text-white rounded-2xl px-4 py-4" style="background-color: #F38BA0">
-                <p>ยอดรวมรายจ่ายรายวัน</p>
-                <p>0 บาท</p>
-                </div>
 
-                <div class="text-white rounded-2xl px-4 py-4" style="background-color: #CFC5A5">
-                <p>ยอดคงเหลือ </p>
-                <p>0 บาท</p>
-                </div>
-        </div>
+            <div class="text-white tracking-wider rounded-2xl px-4 py-4" style="background-color: #5089C6">
+                <p>ยอดรวมคงเหลือ</p>
+                <p>{{ sum.balance }} บาท</p>
+            </div>
         </div>
         <div class="container mx-auto">
             <ledger-chart v-bind:sum="sum"></ledger-chart>

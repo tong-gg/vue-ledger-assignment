@@ -62,7 +62,7 @@ export default {
   },
   methods: {
     addNewLedgerList() {
-      let price = parseInt(this.form.detail.price)
+      let price = parseInt(this.form.detail.price || 0)
       let detail = {
         type: this.form.detail.type,
         note: this.form.detail.note,
