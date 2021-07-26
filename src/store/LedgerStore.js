@@ -11,7 +11,8 @@ export default new Vuex.Store({
     filterData: [],
     sum: {
       income: 0,
-      expense: 0
+      expense: 0,
+      balance: 0
     }
   },
   getters: {
@@ -34,7 +35,7 @@ export default new Vuex.Store({
                     .reduce((prev, next) => {
                         return prev + next
       })
-      
+      state.sum.balance = state.sum.income - state.sum.expense
       return state.sum
     }
   },
