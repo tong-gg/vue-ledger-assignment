@@ -25,7 +25,8 @@ This web application contains 3 sections
 Select date and option (income/expense), then type your amount and notes, press save button
 
 - Table showing data   
-this section will you show all your income/expense data, following by date (present day will be default). You can observe your data following by date you select! DON'T FORGET TO PRESS SEARCH   
+this section will you show all your income/expense data, following by date (present day will be default). You can observe your data following by date you select! DON'T FORGET TO PRESS SEARCH  
+``example-data.json contains example data since 19/07 - 28/07 ``   
 
 - Pie chart   
 show all your income, and expense in form of chart
