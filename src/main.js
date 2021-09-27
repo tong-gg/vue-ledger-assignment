@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import LedgerStore from '@/store/LedgerStore'
+import LedgerStore from './store/LedgerStore'
 import '@/assets/tailwind.css'
 import '@/plugins/apexcharts'
 import { library } from '@fortawesome/fontawesome-svg-core'
